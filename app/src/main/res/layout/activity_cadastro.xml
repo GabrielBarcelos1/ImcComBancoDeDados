@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".CadastroActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Cadastro"
+        android:textAlignment="center"
+        android:textSize="36sp" />
 
     <EditText
         android:id="@+id/editLogin"
@@ -12,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="150dp"
         android:ems="10"
-        android:hint="login"
+        android:hint="Login"
         android:inputType="textPersonName"
         android:textAlignment="center" />
 
@@ -24,30 +35,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="210dp"
         android:ems="10"
-        android:hint="Senha"
+        android:hint="senha"
         android:inputType="textPassword"
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/btnEntrar"
+        android:id="@+id/btnCriarConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
-        android:onClick="onClickLogar"
-        android:text="Entrar" />
-
-    <TextView
-        android:id="@+id/TextCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="270dp"
         android:onClick="onClickCadastro"
-        android:text="Ainda nao possui um cadastro"
-        tools:text="Ainda nao possui um cadastro" />
+        android:text="Criar Conta" />
+
+    <EditText
+        android:id="@+id/editNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
 </RelativeLayout>
