@@ -3,14 +3,19 @@ package com.example.imccombancodedados.model;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "historicoImc")
+@Entity(tableName = "historicoImc"
+        ,foreignKeys = @ForeignKey(entity = Usuario.class,
+        parentColumns = "id",
+        childColumns = "usuarioid",
+     onDelete = ForeignKey.CASCADE))
 public class HistoricoImc {
 
     @NonNull
     @PrimaryKey(autoGenerate = true)
-    private long idHistoricoImc;
+    private long id;
 
     @NonNull
     @ColumnInfo(name = "altura")
@@ -24,6 +29,10 @@ public class HistoricoImc {
     @ColumnInfo(name = "imc")
     private double imc;
 
+    @NonNull
+    @ColumnInfo(name = "usuarioid")
+    private  long usuarioId;
+
     public HistoricoImc(double altura, double peso) {
         this.altura = altura;
         this.peso = peso;
@@ -31,12 +40,12 @@ public class HistoricoImc {
         this.setImc(imc);
     }
 
-    public long getIdHistoricoImc() {
-        return idHistoricoImc;
+    public long getId() {
+        return id;
     }
 
-    public void setIdHistoricoImc(long idHistoricoImc) {
-        this.idHistoricoImc = idHistoricoImc;
+    public void setId(long idHistoricoImc) {
+        this.id= idHistoricoImc;
     }
 
     public double getAltura() {
@@ -63,11 +72,18 @@ public class HistoricoImc {
         this.imc = imc;
     }
 
+    public long getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(long usuarioId) {
+        this.usuarioId = usuarioId;
+    }
 
     @Override
     public String toString() {
         return "HistoricoImc{" +
-                "idHistoricoImc=" + idHistoricoImc +
+                "idHistoricoImc=" + id +
                 ", altura=" + altura +
                 ", peso=" + peso +
                 ", imc=" + imc +

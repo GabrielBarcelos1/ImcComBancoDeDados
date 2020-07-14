@@ -26,7 +26,7 @@ public interface UsuarioDAO {
     public Usuario findByLogin(String login);
 
     @Query("Select * from usuario where login = :login and senha = :senha limit 1")
-    public Usuario FindByLoginAndSenha(String login,String senha);
+    public Usuario findByLoginAndSenha(String login,String senha);
 
     @Insert
     public void insertUsuarios(Usuario ... usuarios);

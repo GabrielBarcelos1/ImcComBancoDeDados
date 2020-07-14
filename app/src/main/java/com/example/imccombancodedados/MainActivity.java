@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         if(login.equals("")||senha.equals("")){
             Toast.makeText(this, "Login ou senha precisam estar preenchidos, tente novamente", Toast.LENGTH_SHORT).show();
         }else{
-            Usuario u = db.usuarioDAO().FindByLoginAndSenha(login, senha);
+            Usuario u = db.usuarioDAO().findByLoginAndSenha(login, senha);
             if(u == null){
                 Toast.makeText(this, "O usuario ou senha estão incorretos", Toast.LENGTH_SHORT).show();
             }else{

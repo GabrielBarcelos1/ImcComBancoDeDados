@@ -7,10 +7,6 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "usuario")
-//        ,foreignKeys = @ForeignKey(entity = HistoricoImc.class,
-//        parentColumns = "idHistorico",
-//        childColumns = "id",
-//        onDelete = ForeignKey.NO_ACTION))
 public class Usuario {
     @NonNull
     @PrimaryKey(autoGenerate = true)
