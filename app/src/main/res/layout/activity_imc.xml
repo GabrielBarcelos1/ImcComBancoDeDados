@@ -56,6 +56,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
+        android:text="o seu imc é de: "
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textSituacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="340dp"
+        android:text="Voce esta em:"
         android:textAlignment="center"
         android:textSize="24sp" />
 
@@ -65,7 +77,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="375dp"
+        android:layout_marginTop="400dp"
+        android:onClick="onClickHistoricoImc"
         android:text="Historico de  seus Imc" />
 
 </RelativeLayout>

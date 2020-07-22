@@ -26,6 +26,10 @@ public class HistoricoImc {
     private double peso;
 
     @NonNull
+    @ColumnInfo(name = "situacao")
+    private String situacao;
+
+    @NonNull
     @ColumnInfo(name = "imc")
     private double imc;
 
@@ -38,6 +42,19 @@ public class HistoricoImc {
         this.peso = peso;
         double imc = peso/(altura*altura);
         this.setImc(imc);
+        if(imc< 18.5){
+            setSituacao("A baixo do peso");
+        }else if(imc>=18.5 && imc<25){
+            setSituacao("Peso normal");
+        }else if(imc>=25 && imc<30){
+            setSituacao("SobrePeso");
+        }else if(imc>=30 && imc<35){
+            setSituacao("Obesidade de grau 1");
+        }else if(imc>=35 && imc < 40){
+            setSituacao("Obesidade de grau 2");
+        }else{
+            setSituacao("Obesidade de grau 3");
+        }
     }
 
     public long getId() {
@@ -80,13 +97,19 @@ public class HistoricoImc {
         this.usuarioId = usuarioId;
     }
 
+
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
+    }
+
     @Override
     public String toString() {
-        return "HistoricoImc{" +
-                "idHistoricoImc=" + id +
-                ", altura=" + altura +
-                ", peso=" + peso +
-                ", imc=" + imc +
-                '}';
+        return "altura: " + altura +
+                " peso: " + peso +
+                " imc:" + String.format("%.2f", imc);
     }
 }

@@ -14,6 +14,7 @@ import com.example.imccombancodedados.model.Usuario;
 
 public class MainActivity extends AppCompatActivity {
     private AppDataBase db;
+    public static final String EXTRA_TEXT_ID = "com.example.imccombancodedados.EXTRA_TEXT_ID";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         String login = editlogin.getText().toString();
         String senha = editSenha.getText().toString();
+        long id;
 
         if(login.equals("")||senha.equals("")){
             Toast.makeText(this, "Login ou senha precisam estar preenchidos, tente novamente", Toast.LENGTH_SHORT).show();
@@ -39,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
             if(u == null){
                 Toast.makeText(this, "O usuario ou senha estão incorretos", Toast.LENGTH_SHORT).show();
             }else{
+                id = db.usuarioDAO().findId(login);
                 Intent iImc = new Intent(this, ImcActivity.class);
+                iImc.putExtra(EXTRA_TEXT_ID,id);
                 startActivity(iImc);
             }
         }

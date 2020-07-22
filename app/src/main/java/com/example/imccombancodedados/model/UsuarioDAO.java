@@ -25,6 +25,9 @@ public interface UsuarioDAO {
     @Query("SELECT * FROM usuario WHERE login = :login LIMIT 1")
     public Usuario findByLogin(String login);
 
+    @Query("SELECT ID FROM usuario WHERE login = :login LIMIT 1")
+    public long findId(String login);
+
     @Query("Select * from usuario where login = :login and senha = :senha limit 1")
     public Usuario findByLoginAndSenha(String login,String senha);
 
